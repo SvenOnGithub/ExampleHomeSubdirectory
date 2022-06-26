@@ -1,0 +1,7 @@
+{{ $imageDir := .Get "imageDir" }}
+{{ $imageSize := .Get "imageSize" }}
+{{ $image := resources.Get  $imageDir }}
+{{ $imageThumb := $image.Resize $imageSize }}
+<a href= {{ $image.RelPermalink }} >
+		<img src="{{ $imageThumb.RelPermalink }}" class="Image-In-Blog">
+</a>
